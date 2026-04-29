@@ -46,7 +46,7 @@ portable by reading lines such as `CREDIT:100` and sending commands such as
 sudo apt update
 sudo apt install -y python3 python3-venv python3-tk python3-pil python3-pil.imagetk cups libcups2-bin fswebcam
 
-git clone <your-repo-url> /home/pi/photobooth
+git clone https://github.com/Low3ee/Raspberry-Pi-Photobooth.git /home/pi/photobooth
 cd /home/pi/photobooth
 python3 -m venv .venv
 . .venv/bin/activate
