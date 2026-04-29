@@ -1,0 +1,53 @@
+[app]
+title = "Photo Booth"
+fullscreen = false
+price_cents = 500
+currency = "USD"
+data_dir = "./data"
+photo_count = 4
+countdown_seconds = 3
+auto_print = false
+allow_retake = true
+refund_on_cancel = true
+
+[camera]
+driver = "mock"
+width = 1280
+height = 720
+timeout_seconds = 20
+warmup_ms = 1200
+device = "/dev/video0"
+command = ""
+
+[layout]
+width_px = 1200
+height_px = 1800
+dpi = 300
+margin_px = 72
+gap_px = 36
+background = "#ffffff"
+accent = "#111827"
+caption = "Thanks for visiting"
+
+[printer]
+driver = "mock"
+printer_name = ""
+copies = 1
+lp_options = ["-o", "media=Custom.4x6in", "-o", "fit-to-page"]
+command = ""
+
+[money]
+driver = "mock"
+serial_port = "/dev/ttyUSB0"
+baud_rate = 9600
+poll_interval_ms = 100
+enable_command = "ENABLE\n"
+disable_command = "DISABLE\n"
+dispense_command = "PAYOUT {cents}\n"
+reject_command = "REJECT\n"
+credit_gpio = 17
+payout_gpio = 27
+cents_per_pulse = 100
+payout_cents_per_pulse = 100
+payout_pulse_ms = 120
+

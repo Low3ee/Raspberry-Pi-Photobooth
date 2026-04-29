@@ -1,0 +1,19 @@
+[Unit]
+Description=Offline Photobooth Kiosk
+After=graphical.target cups.service
+Wants=cups.service
+
+[Service]
+Type=simple
+User=pi
+Group=pi
+WorkingDirectory=/home/pi/photobooth
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/pi/.Xauthority
+ExecStart=/home/pi/photobooth/.venv/bin/python -m photobooth --config /home/pi/photobooth/config.toml
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=graphical.target
+

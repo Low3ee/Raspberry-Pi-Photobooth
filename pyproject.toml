@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "raspi-photobooth"
+version = "0.1.0"
+description = "Offline Raspberry Pi photobooth kiosk with printer and money hardware adapters."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "Pillow>=9.0",
+  "tomli>=2.0; python_version < '3.11'"
+]
+
+[project.optional-dependencies]
+hardware = [
+  "pyserial>=3.5",
+  "RPi.GPIO>=0.7; platform_machine == 'armv7l' or platform_machine == 'aarch64'"
+]
+
+[project.scripts]
+photobooth = "photobooth.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
